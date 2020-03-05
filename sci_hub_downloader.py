@@ -14,7 +14,7 @@ import os
 from bs4 import BeautifulSoup as bs
 
 def pmid_to_bibtex(pmids,_try=3):
-    #modify from "https://gist.github.com/tommycarstensen/ec3c57761f3846c339de925b66f4ac1b"
+    #modify from https://gist.github.com/tommycarstensen/ec3c57761f3846c339de925b66f4ac1b
     #add doi and fix some bugs
     output=""
     dic={}
@@ -131,7 +131,7 @@ def pmid_to_bibtex(pmids,_try=3):
     return dic, output
 
 
-# Extract Mirror
+# Extract Mirror, modify from https://github.com/gadilashashank/Sci-Hub/blob/master/sci_hub.py
 def get_links(target,_try=3):
     # Get response of target page
     # from Sci-Hub and create soup object
@@ -212,8 +212,8 @@ if __name__ == "__main__":
     parser.add_argument('-d','--download_dir',default="", help="Path for saving downloaded BIBTEX file and PDFs, \
                         defaultly save in DESKTOP/Sci_Hub_Download")
     parser.add_argument('-s','--sci_hub',default="https://sci-hub.tw/",help="Site for Sci-hub to get PDF source,\
-                        dafault is https://sci-hub.tw/")
-    parser.add_argument('-t','--try_times', type=int, default=3, help="Times for trying to connect with Sci-hub server,\
+                        default is https://sci-hub.tw/")
+    parser.add_argument('-t','--try_times', type=int, default=3, help="Total retrying times to connect with web server,\
                         default is 3")
     parser.add_argument('-n','--number', default=False, action='store_true',help="T/F, if set True, the PDF file name will\
                         be named like '008_pmid30293440_Tian_2019', by default the PDF name is 'pmid30293440_Tian_2019'")
@@ -225,7 +225,10 @@ if __name__ == "__main__":
         file_pmids = [line.rstrip('\n') for line in open(args.file)]
     else:
         file_pmids=[]
-    args.pmids = file_pmids+ args.pmids
+    if args.pmids is None:
+        args.pmids = file_pmids
+    else:
+        args.pmids = file_pmids+args.pmids
     #analyze pmids and obtain bibtex
     print("Analyzing DOI...")
     bibs, output =pmid_to_bibtex(args.pmids,args.try_times)
@@ -270,7 +273,7 @@ if __name__ == "__main__":
             pdf_name = bibs[pmid]["bibtex"]+".pdf"
         #set pdf saving directory
         _dir=os.path.join(download_dir,pdf_name)
-        #if file already exists, do not download
+        #if file already exists, do not   download
         if pdf_name in file_names:
             print("{} already exists for PMID: {}\n".format(pdf_name,pmid))
             i+=1
