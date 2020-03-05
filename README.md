@@ -179,3 +179,6 @@ Finished.
 ```
 ## Known issues
 During developing and testing the script,  the console gives an error message: Can't connect to HTTPS URL because the SSL module is not available.  Here is a solution: [https://github.com/conda/conda/issues/8273](https://github.com/conda/conda/issues/8273)
+
+### Acknowledgement
+The script is modified from pmid2bibtex.py by Tommy (https://gist.github.com/tommycarstensen/ec3c57761f3846c339de925b66f4ac1b) and sci_hub.py by Gadila (https://github.com/gadilashashank/Sci-Hub/blob/master/sci_hub.py). Special thanks should be given to Tommy and Gadila.
