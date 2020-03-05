@@ -14,7 +14,7 @@ Hope you find it useful.
 ## Installation
 
 
-This application is designed to run on Windows machines. Please refer REQUIREMENTS.md file and manually install the mentioned dependencies. 
+This application is designed to run on Windows machines. Please refer requirements.txt file and manually install the mentioned dependencies. 
 
 ```md
 pip3 install requests beautifulsoup4 xml
