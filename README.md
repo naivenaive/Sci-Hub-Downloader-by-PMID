@@ -94,7 +94,7 @@ Then, the script will download the articles, the details are presented in the co
 Here is a sample command:
 ```md
 $ python sci_hub_downloader.py -p 31014115 abcd 30293440 123
-$ python sci_hub_downloader.py -f  sample_pmids.txt
+$ python sci_hub_downloader.py -f sample_pmids.txt
 ```
 The output is presented as following:
 ```
