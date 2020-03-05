@@ -1,0 +1,6 @@
+requests
+xml
+calendar
+argparse
+os
+bs4
