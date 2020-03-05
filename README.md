@@ -61,10 +61,10 @@ This is the PMID（NOT PMCID） of the paper to be downloaded. Multiple PMIDs ar
 
 Example usage
 ```md
-$ python sci_hub——downloader.py -p 31014115
-$ python sci_hub——downloader.py --pmids 31014115 
-$ python sci_hub——downloader.py -p 31014115 30293440
-$ python sci_hub——downloader.py --pmids 31014115 30293440
+$ python sci_hub_downloader.py -p 31014115
+$ python sci_hub_downloader.py --pmids 31014115 
+$ python sci_hub_downloader.py -p 31014115 30293440
+$ python sci_hub_downloader.py --pmids 31014115 30293440
 ```
 ### -f/--file
 This optional flag specifies the script to read a .txt file with each PMID in each line. A sampled file named "sample_pmids.txt" is  provided in the repository. The content is shown below.
@@ -75,7 +75,7 @@ This flag specifies the directory for saving corresponding BIBTEX  and PDFs. By 
 ### -s/--sci_hub
 This flag specifies the site for Sci-hub to get PDF source, default is https://sci-hub.tw/. You can specify the Sci-Hub source as
 ```md
-$ python sci_hub——downloader.py -p 31014115 -s htttps://sci-hub.io/
+$ python sci_hub_downloader.py -p 31014115 -s htttps://sci-hub.io/
 ```
 ### -t/--try_times
 For each request , the script will retry for a total of ```try_times```  times. The default is 3.
@@ -83,7 +83,7 @@ For each request , the script will retry for a total of ```try_times```  times. 
 ### -n/--number
  This flag is a boolean. By default the PDF name is  'pmid31014115_Huang_2019'.  If set True, a three-digits number will be added to the default PDF file name, like '008_pmid31014115_Huang_2019'.  It can be set True as following:
  ```md
-$ python sci_hub——downloader.py -p 31014115 -n 
+$ python sci_hub_downloader.py -p 31014115 -n 
  ```
 
 ### Download/storage
