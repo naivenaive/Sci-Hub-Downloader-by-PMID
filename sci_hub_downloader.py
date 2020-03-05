@@ -44,8 +44,6 @@ def pmid_to_bibtex(pmids,_try=3):
         Issue = PubmedArticle.find('./MedlineCitation/Article/Journal/JournalIssue/Issue')
         Year = PubmedArticle.find('./MedlineCitation/Article/Journal/JournalIssue/PubDate/Year')
         Month = PubmedArticle.find('./MedlineCitation/Article/Journal/JournalIssue/PubDate/Month')
-    ##    Year = PubmedArticle.find('./MedlineCitation/Article/ArticleDate/Year')
-    ##    Month = PubmedArticle.find('./MedlineCitation/Article/ArticleDate/Month')
         Title = PubmedArticle.find('./MedlineCitation/Article/Journal/ISOAbbreviation')
         ArticleTitle = PubmedArticle.find('./MedlineCitation/Article/ArticleTitle')
         MedlinePgn = PubmedArticle.find('./MedlineCitation/Article/Pagination/MedlinePgn')
@@ -61,7 +59,6 @@ def pmid_to_bibtex(pmids,_try=3):
             authors.append('{}, {}'.format(LastName, ForeName))
         ## Use InvestigatorList instead of AuthorList
         if len(authors) == 0:
-            ## './MedlineCitation/Article/Journal/InvestigatorList'
             for Investigator in PubmedArticle.iter('Investigator'):
                 try:
                     LastName = Investigator.find('LastName').text
@@ -192,16 +189,6 @@ def download_paper(mirror, _dir, _try=3):
     else:
         print("Fail in getting PDF.")
         return(0)
-    # Check if firefox exists and open download link
-    # in firefox
-#    elif re.match("text/html", response.headers['content-type']):
-#        print("Looks like captcha encountered.")
-#        print("Download link is \n" + mirror + "\n")
-#        time.sleep(2)
-#        wbb.open_new(mirror) 
-
-
-
 
 if __name__ == "__main__":
     #define command line arguments
