@@ -7,7 +7,7 @@ This application is for educational purpose only. I do not take responsibility o
 
 ## About
 
-*Sci-Hub downloader by PMID* is a command line wrapper of Sci-Hub written in Python. *Sci-Hub downloader by PMID*  first convert PMID into Bibtex and obtain the corresponding doi. Then, the doi is combined with Sci-Hub address to fetch the article in PDF format. You can use the script to download research articles from your terminal itself by providing PMID.  
+*Sci-Hub downloader by PMID* is a command line wrapper of Sci-Hub written in Python. *Sci-Hub downloader by PMID*  first convert PMID(Pubmed ID) into Bibtex and obtain the corresponding doi. Then, the doi is combined with Sci-Hub address to fetch the article in PDF format. You can use the script to download research articles from your terminal itself by providing PMID.  
 
 Hope you find it useful.
 
