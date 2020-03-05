@@ -78,10 +78,10 @@ This flag specifies the site for Sci-hub to get PDF source, default is https://s
 $ python sci_hub——downloader.py -p 31014115 -s htttps://sci-hub.io/
 ```
 ### -t/--try_times
-For each request , the script will retry for a total of ```try_times ``` times.  The default is 3.
+For each request , the script will retry for a total of ```try_times```  times. The default is 3.
 
 ### -n/--number
- This flag is a boolean. By default the PDF name is  'pmid30293440_Tian_2019'.  If set True, the PDF file name will be named like '008_pmid30293440_Tian_2019'.  It can be set True as following:
+ This flag is a boolean. By default the PDF name is  'pmid31014115_Huang_2019'.  If set True, a three-digits number will be added to the default PDF file name, like '008_pmid31014115_Huang_2019'.  It can be set True as following:
  ```md
 $ python sci_hub——downloader.py -p 31014115 -n 
  ```
@@ -177,7 +177,7 @@ Save log in .\Desktop\Sci_Hub_Download\log.txt
 
 Finished.
 ```
-## Known issues
+## Known issue
 During developing and testing the script,  the console gives an error message: Can't connect to HTTPS URL because the SSL module is not available.  Here is a solution: [https://github.com/conda/conda/issues/8273](https://github.com/conda/conda/issues/8273)
 
 ### Acknowledgement
